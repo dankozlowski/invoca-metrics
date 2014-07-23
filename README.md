@@ -38,7 +38,7 @@ Mixin the Source module:
       ...
     end
 
-Then any methods from `Invoca::Metrics::Client` via the `metrics` member:
+Then call any method from `Invoca::Metrics::Client` via the `metrics` member:
 
     metrics.timer("some_process/execution_time", time_in_ms)
 
