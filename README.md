@@ -27,6 +27,21 @@ Add the following code to your application...
     Invoca::Metrics.cluster_name    = "cluster name (if you have one)"
     Invoca::Metrics.sub_server_name = "some_worker_process"
 
+Out of the four settings above, only `service_name` is required.  The others are optional.
+
+## Usage
+
+Mixin the Source module:
+
+    class MyClass
+      include Invoca::Metrics::Source
+      ...
+    end
+
+Then any methods from `Invoca::Metrics::Client` via the `metrics` member:
+
+    metrics.timer("some_process/execution_time", time_in_ms)
+
 
 ## Contributing
 
