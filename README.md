@@ -1,6 +1,6 @@
 # Invoca::Metrics
 
-Metrics generation for Sensu
+Metrics generation for your apps!
 
 ## Installation
 
