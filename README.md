@@ -22,10 +22,10 @@ Add the following code to your application...
 
     require 'invoca/metrics'
 
-    Invoca::Metrics.service_name    = "my_cool_application"
-    Invoca::Metrics.server_name     = "some_hostname"
-    Invoca::Metrics.cluster_name    = "cluster name (if you have one)"
-    Invoca::Metrics.sub_server_name = "some_worker_process"
+    Invoca::Metrics.service_name    = "my_event_worker"
+    Invoca::Metrics.server_name     = Socket.gethostname
+    Invoca::Metrics.cluster_name    = "production"
+    Invoca::Metrics.sub_server_name = "worker_process_1"
 
 Out of the four settings above, only `service_name` is required.  The others are optional.
 
