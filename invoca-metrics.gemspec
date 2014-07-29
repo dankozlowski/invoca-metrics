@@ -6,11 +6,11 @@ require 'invoca/metrics/version'
 Gem::Specification.new do |spec|
   spec.name          = "invoca-metrics"
   spec.version       = Invoca::Metrics::VERSION
-  spec.authors       = ["Cary Penniman"]
-  spec.email         = ["cpenniman@invoca.com"]
+  spec.authors       = ["Colin Kelley", "Cary Penniman"]
+  spec.email         = ["colindkelley@gmail.com","cpenniman@gmail.com"]
   spec.description   = %q{Invoca metrics reporting library}
   spec.summary       = %q{Invoca metrics reporting library}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Invoca/invoca-metrics"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
