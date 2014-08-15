@@ -42,6 +42,8 @@ Then call any method from `Invoca::Metrics::Client` via the `metrics` member:
 
     metrics.timer("some_process/execution_time", time_in_ms)
 
+Additional examples of using the gem can be found in the file: test/integration/metrics_gem_tester.rb
+
 ## TODO
 
 * it would be really nice to remove the dependency on the activesupport gem
