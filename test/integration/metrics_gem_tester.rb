@@ -30,6 +30,6 @@ class MetricsGemTester
     m1 = Invoca::Metrics::DirectMetric.new("metricgemreport..couldbeanything.duration_in_seconds.count", count_value)
     m2 = Invoca::Metrics::DirectMetric.new("metricgemreport.couldbeanything.duration_in_seconds.median", median_value)
     Invoca::Metrics::DirectMetric.report([m1, m2])
-    puts "fired first pair of direct metrics with count=#{count_value} and median=#{median_value}"
+    puts "fired pair of direct metrics with count=#{count_value} and median=#{median_value}"
   end
 end
