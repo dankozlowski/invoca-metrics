@@ -4,7 +4,6 @@ require File.expand_path('../../../../helpers/metrics/metrics_test_helpers', __F
 class MetricsClientTest < Minitest::Test
 
   include MetricsTestHelpers
-  include ActionDispatch::Assertions::SelectorAssertions
 
   context "initialization" do
     setup do
