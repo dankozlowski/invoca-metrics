@@ -21,7 +21,7 @@ module Invoca
         @sub_server_name = sub_server_name
 
         super(@hostname, @port)
-        self.namespace = [@cluster_name, @service_name].compact.join(STATSD_METRICS_SEPARATOR).nonblank?
+        self.namespace = [@cluster_name, @service_name].compact.join(STATSD_METRICS_SEPARATOR).presence
       end
 
       def gauge(name, value)
@@ -53,7 +53,7 @@ module Invoca
       end
 
       def timer(name, milliseconds = nil, &block)
-        name.nonblank? or raise ArgumentError, "Must specify a metric name."
+        name.presence or raise ArgumentError, "Must specify a metric name."
         (!milliseconds.nil? ^ block_given?) or raise ArgumentError, "Must pass exactly one of milliseconds or block."
         name_and_type = [name, "timer", @server_name].join(STATSD_METRICS_SEPARATOR)
 
@@ -84,7 +84,7 @@ module Invoca
     protected
 
       def metric_args(name, value, stat_type)
-        name.nonblank? or raise ArgumentError, "Must specify a metric name."
+        name.presence or raise ArgumentError, "Must specify a metric name."
         extended_name = [name, stat_type, @server_name, @sub_server_name].compact.join(STATSD_METRICS_SEPARATOR)
         if value
           [extended_name, value]
