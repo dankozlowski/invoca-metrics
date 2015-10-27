@@ -1,7 +1,7 @@
 require File.expand_path('../../../../test_helper',  __FILE__)
 require File.expand_path('../../../../helpers/metrics/metrics_test_helpers', __FILE__)
 
-class MetricsSourceTest < Minitest::Test
+describe Invoca::Metrics::Source do
 
   include MetricsTestHelpers
   include ActionDispatch::Assertions::SelectorAssertions

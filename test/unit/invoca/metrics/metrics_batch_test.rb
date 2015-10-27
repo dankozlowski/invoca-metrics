@@ -1,7 +1,7 @@
 require File.expand_path('../../../../test_helper',  __FILE__)
 require File.expand_path('../../../../helpers/metrics/metrics_test_helpers', __FILE__)
 
-class MetricsBatchTest < Minitest::Test
+describe Invoca::Metrics::Batch do
   include MetricsTestHelpers
 
   context "batching" do
@@ -45,5 +45,4 @@ class MetricsBatchTest < Minitest::Test
       assert_nil metrics_client.sent_message
     end
   end
-
 end

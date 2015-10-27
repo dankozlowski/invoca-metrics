@@ -1,6 +1,6 @@
 require File.expand_path('../../../../test_helper',  __FILE__)
 
-class DirectMetricTest < Minitest::Test
+describe Invoca::Metrics::DirectMetric do
 
   def stubs_sensu_udp_socket
     @packets = []
