@@ -16,6 +16,8 @@ module Invoca
       end
 
       PERIOD = 60
+      SENSU_PORT = 3030
+      SENSU_HOST = '127.0.0.1'
 
       class << self
         def report(metrics)
@@ -57,18 +59,15 @@ module Invoca
               end
         end
 
-        private
-
-        SENSU_PORT = 3030
-        SENSU_HOST = '127.0.0.1'
-
-        def send_to_sensu(message)
-          UDPSocket.new.send(message.to_json + "\n", 0, SENSU_HOST, SENSU_PORT)
-        end
-
         def rounded_tick
           tick = Time.now.to_i
           tick - (tick % PERIOD)
+        end
+
+        private
+
+        def send_to_sensu(message)
+          UDPSocket.new.send(message.to_json + "\n", 0, SENSU_HOST, SENSU_PORT)
         end
 
       end

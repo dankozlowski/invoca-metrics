@@ -1,6 +1,6 @@
 require File.expand_path('../../../test_helper',  __FILE__)
 
-class MetricsClientTest < Minitest::Test
+describe Invoca::Metrics do
 
   should "raise an exception if service name is not defined" do
     Invoca::Metrics.service_name = nil
