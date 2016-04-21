@@ -81,8 +81,12 @@ module Invoca
         [result, length_of_time]
       end
 
-      def self.metrics
-        new(Client::STATSD_DEFAULT_HOSTNAME, Client::STATSD_DEFAULT_PORT, Invoca::Metrics.cluster_name, Invoca::Metrics.service_name, Invoca::Metrics.server_name, Invoca::Metrics.sub_server_name)
+      class << self
+
+        def metrics
+          new(Client::STATSD_DEFAULT_HOSTNAME, Client::STATSD_DEFAULT_PORT, Invoca::Metrics.cluster_name, Invoca::Metrics.service_name, Invoca::Metrics.server_name, Invoca::Metrics.sub_server_name)
+        end
+
       end
 
     protected
